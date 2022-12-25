@@ -8,9 +8,8 @@ router.get('/:id', async (req, res) => {
       .findOne({
         where: { id: req.params.id },
       })
-      .then((data) => {
-        res.json(data);
-        res.send(200);
+      .then((report) => {
+        res.status(200).send(report);
       })
       .catch((err) => {
         console.error(err.message);
